@@ -1,0 +1,9 @@
+{{#tag-input
+  tags=tags
+  addTag=(action "addTag")
+  removeTagAtIndex=(action "removeTagAtIndex")
+  as |tag|
+}}
+  {{tag}}
+{{/tag-input}}
+{{yield}}
