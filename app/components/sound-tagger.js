@@ -1,7 +1,14 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  tags: ['first', 'second'],
+  init: function() {
+    this._super()
+    this.setProperties({
+      tags: ['first', 'second']
+    })
+  },
+
+  tags: null,
  
   actions: {
     addTag(tag) {
