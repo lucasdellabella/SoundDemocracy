@@ -1,12 +1,6 @@
-<div>
-    {{#each sounds as |sound|}}
-        <div >
-            <span style='float:left;'>
-                {{upvote-element}}
-            </span> 
-            <span >
-                {{sound-element sound=sound}}
-            </span>
-        </div>
-    {{/each}}
-</div>
+{{#each sounds as |sound|}}
+    <div>
+        {{upvote-element}}
+        {{sound-element sound=sound}}
+    </div>
+{{/each}}
