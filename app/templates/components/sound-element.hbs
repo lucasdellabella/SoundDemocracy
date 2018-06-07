@@ -3,7 +3,7 @@
     <h2>{{sound.name}}</h2>
     <h4>Uploaded by: {{sound.uploadedBy}}</h4>
     <div>
-        <img {{action 'toggleIsPlaying'}} src={{playPauseSourceImg}} height='50' width='50'/>
+        <img {{action 'toggleIsPlaying' sound.url}} src={{playPauseSourceImg}} height='50' width='50'/>
         <h4> [ {{sound.data}} ]</h4>
     </div>
 </div>
