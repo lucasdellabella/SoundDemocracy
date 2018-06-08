@@ -1,15 +1,16 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
 
     upvoted: false,
     downvoted: false,
 
-    upvoteSourceImg: Ember.computed('upvoted', function() {
+    upvoteSourceImg: computed('upvoted', function() {
         return this.get('upvoted') ? 'upvote_clicked.png' : 'upvote_unclicked.png';
     }),
 
-    downvoteSourceImg: Ember.computed('downvoted', function() {
+    downvoteSourceImg: computed('downvoted', function() {
         return this.get('downvoted') ? 'downvote_clicked.png' : 'downvote_unclicked.png';
     }),
 

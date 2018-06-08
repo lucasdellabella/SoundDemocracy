@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { computed, inject } from '@ember/object';
 
 export default Component.extend({
     init: function(fileUrl) {
@@ -8,15 +9,14 @@ export default Component.extend({
         })
     },
 
-    hifi: Ember.inject.service(),
+    hifi: inject.service(),
 
     isPlaying: false,
 
     fileUrl: null,
 
-    playPauseSourceImg: Ember.computed(
-        'hifi.currentSound.url', 
-        'hifi.currentSound.isPlaying',
+    playPauseSourceImg: computed(
+        'hifi.currentSound.{url,isPlaying}', 
         'sound.url', 
         function() {
             let thisSoundIsPlaying = this.get('hifi.currentSound.url') == this.get('sound.url') && this.get('hifi.currentSound.isPlaying')
@@ -40,9 +40,5 @@ export default Component.extend({
                 this.get('hifi').pause()
             }
         },
-
-        play: function(urls) {
-        }
-
     }
 });
